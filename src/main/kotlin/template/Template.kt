@@ -15,24 +15,16 @@ class Template(private val inputType: InputType) {
         return 0
     }
 
-    private fun parsedLines(): Pair<List<Long>, List<Long>> {
-        val lines = readAllLines(inputType, this::class.java.packageName)
-        val (list1, list2) = lines.map { it.split("   ") }
-            .map { it.first().toLong() to it[1].toLong() }
-            .unzip()
-        return list1 to list2
-    }
-
     fun solvePart1() {
         val duration = measureTime {
-            println("Result for part 1 with input ${inputType.name}:  ${part1()}")
+            print("Result for part 1 with input ${inputType.name}:  ${part1()}")
         }
         println(" in : $duration")
     }
 
     fun solvePart2() {
         val duration = measureTime {
-            println("Result for part 2 with input ${inputType.name}:  ${part2()}")
+            print("Result for part 2 with input ${inputType.name}:  ${part2()}")
         }
         println(" in : $duration")
     }
